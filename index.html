@@ -62,24 +62,27 @@ body {
   height: 105px;
   margin: 0 auto 35px;
   opacity: 0;
-  transform-origin: 50% 100%;
-  animation:
-    appear 2s ease .5s forwards,
-    sway 5s ease-in-out 2.5s infinite;
+  animation: appear 2s ease .5s forwards;
 }
 
-@keyframes sway {
+.botanical g {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: leafSway 5s ease-in-out 2.5s infinite;
+}
+
+@keyframes leafSway {
   0%, 100% {
     transform: rotate(0deg);
   }
   25% {
-    transform: rotate(2deg);
+    transform: rotate(1.5deg);
   }
   50% {
     transform: rotate(0deg);
   }
   75% {
-    transform: rotate(-2deg);
+    transform: rotate(-1.5deg);
   }
 }
 
