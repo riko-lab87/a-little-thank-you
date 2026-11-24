@@ -6,7 +6,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>A Little Thank You</title>
+<svg class="botanical" viewBox="0 0 140 120"
+     fill="none" xmlns="http://www.w3.org/2000/svg">
 
+  <g class="plant-sway">
+
+    <g stroke="#a99a80" stroke-width="1.2"
+       stroke-linecap="round" stroke-linejoin="round">
+      <path d="M70 110 C68 80 75 50 65 13"/>
+      <path d="M69 85 C49 78 35 58 37 40 C54 46 67 62 69 85Z"/>
+      <path d="M68 65 C87 57 98 40 94 24 C78 31 68 46 68 65Z"/>
+      <path d="M70 101 C88 91 101 76 102 61 C85 66 73 81 70 101Z"/>
+      <path d="M65 48 C52 39 49 26 55 16 C67 26 70 38 65 48Z"/>
+      <path d="M37 40 C49 53 57 64 69 85"/>
+      <path d="M94 24 C83 37 76 49 68 65"/>
+      <path d="M102 61 C89 73 79 85 70 101"/>
+      <path d="M55 16 C60 27 63 36 65 48"/>
+    </g>
+
+    <g fill="#c5b69d">
+      <circle cx="37" cy="40" r="2"/>
+      <circle cx="94" cy="24" r="2"/>
+      <circle cx="102" cy="61" r="2"/>
+      <circle cx="55" cy="16" r="2"/>
+    </g>
+
+  </g>
+</svg>
+  
 <style>
 * {
   box-sizing: border-box;
@@ -56,30 +83,38 @@ body {
   color: #a18c72;
   margin-bottom: 38px;
 }
-  
+
 .botanical {
   width: 125px;
   height: 105px;
   margin: 0 auto 35px;
   opacity: 0;
-  animation: appear 2s ease .5s forwards;
+  animation: botanicalAppear 2s ease .5s both;
 }
 
-.botanical g {
-  transform-box: fill-box;
-  transform-origin: 50% 100%;
-  animation: leafSway 5s ease-in-out 2.5s infinite;
+@keyframes botanicalAppear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-@keyframes leafSway {
+.plant-sway {
+  transform-box: view-box;
+  transform-origin: 70px 110px;
+  animation: sway 6s ease-in-out 2.5s infinite;
+}
+
+@keyframes sway {
   0%, 100% {
     transform: rotate(0deg);
   }
   25% {
     transform: rotate(1.5deg);
-  }
-  50% {
-    transform: rotate(0deg);
   }
   75% {
     transform: rotate(-1.5deg);
