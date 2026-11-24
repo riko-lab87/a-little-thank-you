@@ -56,7 +56,17 @@ body {
   color: #a18c72;
   margin-bottom: 38px;
 }
-
+  
+.botanical {
+  width: 125px;
+  height: 105px;
+  margin: 0 auto 35px;
+  opacity: 0;
+  transform-origin: 50% 100%;
+  animation:
+    appear 2s ease .5s forwards,
+    sway 5s ease-in-out 2.5s infinite;
+}
 @keyframes sway {
   0%, 100% {
     transform: rotate(0deg);
